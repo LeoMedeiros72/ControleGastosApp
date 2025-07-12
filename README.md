@@ -2,7 +2,7 @@
 
 # ControleGastosApp
 
- Aplicativo simples de controle de gastos pessoais, desenvolvido com .NET MAUI com objetivo de ser implementada IA para auxiliar no controle de gastos comparando com meses anteriores e compras no mesmo período ou do mesmo tipo. 
+Aplicativo simples de controle de gastos pessoais, desenvolvido com .NET MAUI, com o objetivo de futuramente implementar inteligência artificial para auxiliar na gestão de despesas. A proposta é comparar gastos com meses anteriores, categorias ou períodos semelhantes.
 
 ## Funcionalidades
 
@@ -35,18 +35,37 @@
 ## 🚀 Como executar
 
 1. Clone este repositório:
-   ```bash
-   git clone https://github.com/LeoMedeiros72/ControleGastosApp.git
-  
-
+```
+git clone https://github.com/LeoMedeiros72/ControleGastosApp.git
+cd ControleGastosApp
+```
 2. Abra o projeto no Visual Studio 2022 ou superior.
 
 3. Selecione a plataforma desejada (Android, Windows, etc).
+   
+4. Execute o projeto (Ctrl + F5 ou botão “Executar”).
 
-Execute o projeto.
 
-## Para baixar o arquivo .apk no seu celular android 
+## Instale o .APK no seu Celular Android
 
-<img width="530" height="530" alt="qr_code_apk_download (1)" src="https://github.com/user-attachments/assets/542bfe8b-f5a2-4699-90f3-b918480a3937" />
+Versão compatível com Android 5.0 (API 21) ou superior.
+
+[Download direto do APK](https://github.com/LeoMedeiros72/ControleGastosApp/releases/latest/download/ControleGastosApp-v1.0.0-arm64.apk)
+
+Ou escaneie o QR Code:
+
+<img src="https://github.com/user-attachments/assets/542bfe8b-f5a2-4699-90f3-b918480a3937" width="250" alt="QR Code para download do APK" />
+
+Como instalar:
+Baixe o .apk clicando no link ou escaneando o QR Code acima.
+
+Copie para seu celular (se necessário).
+
+Ative a opção “Permitir instalação de fontes desconhecidas” nas configurações do Android.
+
+Toque no arquivo e siga os passos para concluir a instalação.
+
+⚠️ Esta versão não está disponível na Google Play Store.
+
 
 
