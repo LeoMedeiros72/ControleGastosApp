@@ -1,0 +1,84 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControleGastosApp.MainPage"
+             BackgroundColor="Black"
+             Title="Controle Digital">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Título -->
+            <Label Text="Controle Digital"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Yellow" />
+
+            <!-- Campo: Valor -->
+            <Entry x:Name="valorEntry" 
+                   Placeholder="Valor gasto" 
+                   Keyboard="Numeric"
+                   TextColor="White"
+                   PlaceholderColor="Gray" />
+
+            <!-- Campo: Onde foi gasto -->
+            <Entry x:Name="ondeEntry" 
+                   Placeholder="Onde foi gasto"
+                   TextColor="White"
+                   PlaceholderColor="Gray" />
+
+            <!-- Campo: Forma de pagamento -->
+            <Picker x:Name="formaPagamentoPicker" Title="Forma de pagamento"
+                    TextColor="White"
+                    TitleColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Dinheiro</x:String>
+                        <x:String>Crédito</x:String>
+                        <x:String>Pix</x:String>
+                        <x:String>Débito</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Botão para adicionar gasto -->
+            <Button Text="Adicionar Gasto" 
+                    Clicked="OnAdicionarGastoClicked"
+                    BackgroundColor="DarkGreen"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+            <!-- Lista de gastos -->
+            <CollectionView x:Name="gastosCollectionView" Margin="0,10,0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#1E1E1E">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Valor, StringFormat='R$ {0:F2}'}" FontAttributes="Bold" TextColor="White"/>
+                                <Label Text="{Binding Onde}" TextColor="White"/>
+                                <Label Text="{Binding FormaPagamento}" TextColor="White"/>
+                                <Label Text="{Binding Data, StringFormat='Data: {0:dd/MM/yyyy HH:mm}'}" 
+                                       FontSize="10" TextColor="Gray"/>
+                                <Button Text="Excluir" 
+                                        BackgroundColor="Red" 
+                                        TextColor="White"
+                                        Clicked="OnExcluirGastoClicked"
+                                        CommandParameter="{Binding .}" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Total gasto no rodapé -->
+            <Label x:Name="totalLabel"
+                   Text="Total gasto: R$ 0,00"
+                   FontSize="20"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="0,20,0,10"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
