@@ -44,3 +44,8 @@
 3. Selecione a plataforma desejada (Android, Windows, etc).
 
 Execute o projeto.
+
+## Para baixar o arquivo .apk no seu celular android 
+
+<img width="530" height="530" alt="qr_code_apk_download" src="https://github.com/user-attachments/assets/9f12b026-d064-4655-84d0-fd64684f6efd" />
+
