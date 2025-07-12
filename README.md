@@ -50,7 +50,7 @@ cd ControleGastosApp
 
 Versão compatível com Android 5.0 (API 21) ou superior.
 
-[Download direto do APK](https://github.com/LeoMedeiros72/ControleGastosApp/releases/latest/download/ControleGastosApp-v1.0.0-arm64.apk)
+[Download direto do APK](https://github.com/LeoMedeiros72/ControleGastosApp/releases/download/v1.0.0/ContoleGastosApp-v1.0.0-arm64.apk)
 
 Ou escaneie o QR Code:
 
