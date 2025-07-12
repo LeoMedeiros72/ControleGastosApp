@@ -1,3 +1,5 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/LeoMedeiros72/ControleGastosApp)
+
 # ControleGastosApp
 
  Aplicativo simples de controle de gastos pessoais, desenvolvido com .NET MAUI com objetivo de ser implementada IA para auxiliar no controle de gastos comparando com meses anteriores e compras no mesmo período ou do mesmo tipo. 
@@ -28,6 +30,7 @@
 ## Captura de tela
 
 ![Imagem do WhatsApp de 2025-07-12 à(s) 13 19 12_77cbea2b](https://github.com/user-attachments/assets/0b63fe90-bf97-49c0-ab3d-4791f27c9a69)
+
 
 ## 🚀 Como executar
 
