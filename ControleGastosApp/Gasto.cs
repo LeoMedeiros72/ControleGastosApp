@@ -18,8 +18,12 @@ namespace ControleGastosApp
 
         public DateTime Data { get; set; } = DateTime.Now;
 
-        // Campos extras para quando você quiser usar categorias no futuro
+        // Campos opcionais
         public int? CategoriaId { get; set; }
         public int? SubcategoriaId { get; set; }
+
+        public string CategoriaNome { get; set; }
+        public string SubcategoriaNome { get; set; }
+
     }
 }

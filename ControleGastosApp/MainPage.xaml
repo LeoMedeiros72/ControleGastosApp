@@ -1,98 +1,162 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ControleGastosApp.MainPage"
-             BackgroundColor="Black"
+             BackgroundColor="#121212"
              Title="Controle Digital">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-            <!-- Título -->
+            <!-- 🔹 Cabeçalho -->
             <Label Text="Controle Digital"
-                   FontSize="28"
+                   FontSize="32"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   TextColor="Yellow" />
+                   TextColor="#FFD700"
+                   Margin="0,10,0,20"/>
 
-            <!-- Campo: Valor -->
-            <Entry x:Name="valorEntry" 
-                   Placeholder="Valor gasto" 
-                   Keyboard="Numeric"
+            <!-- 🔹 Card de cadastro -->
+            <Frame BorderColor="#333" BackgroundColor="#1E1E1E" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Novo Gasto" 
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+
+                    <!-- Valor -->
+                    <Entry x:Name="valorEntry" 
+                           Placeholder="Valor gasto (R$)" 
+                           Keyboard="Numeric"
+                           TextColor="White"
+                           PlaceholderColor="Gray" />
+
+                    <!-- Local -->
+                    <Entry x:Name="ondeEntry" 
+                           Placeholder="Onde foi gasto?"
+                           TextColor="White"
+                           PlaceholderColor="Gray" />
+
+                    <!-- Forma de pagamento -->
+                    <Picker x:Name="formaPagamentoPicker" Title="Forma de pagamento"
+                            TextColor="White"
+                            TitleColor="White">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Dinheiro</x:String>
+                                <x:String>Crédito</x:String>
+                                <x:String>Débito</x:String>
+                                <x:String>Pix</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <!-- Categoria -->
+                    <Picker x:Name="categoriaPicker"
+                            Title="Categoria (opcional)"
+                            SelectedIndexChanged="OnCategoriaSelecionada"
+                            TextColor="White"
+                            TitleColor="White"/>
+
+                    <!-- Subcategoria -->
+                    <Picker x:Name="subcategoriaPicker"
+                            Title="Subcategoria (opcional)"
+                            TextColor="White"
+                            TitleColor="White"/>
+
+                    <!-- Botões -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="Adicionar"
+                                Clicked="OnAdicionarGastoClicked"
+                                BackgroundColor="DarkGreen"
+                                TextColor="White"
+                                CornerRadius="8"
+                                HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Sincronizar"
+                                Clicked="OnMigrarDadosClicked"
+                                BackgroundColor="#0066CC"
+                                TextColor="White"
+                                CornerRadius="8"
+                                HorizontalOptions="FillAndExpand"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- 🔹 Lista de gastos -->
+            <Label Text="Meus Gastos"
+                   FontSize="20"
+                   FontAttributes="Bold"
                    TextColor="White"
-                   PlaceholderColor="Gray" />
+                   Margin="0,10,0,5"/>
 
-            <!-- Campo: Onde foi gasto -->
-            <Entry x:Name="ondeEntry" 
-                   Placeholder="Onde foi gasto"
-                   TextColor="White"
-                   PlaceholderColor="Gray" />
-
-            <!-- Campo: Forma de pagamento -->
-            <Picker x:Name="formaPagamentoPicker" Title="Forma de pagamento"
-                    TextColor="White"
-                    TitleColor="White">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Dinheiro</x:String>
-                        <x:String>Crédito</x:String>
-                        <x:String>Pix</x:String>
-                        <x:String>Débito</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
-            <!-- Botão para adicionar gasto -->
-            <Button Text="Adicionar Gasto" 
-                    Clicked="OnAdicionarGastoClicked"
-                    BackgroundColor="DarkGreen"
-                    TextColor="White"
-                    CornerRadius="10" />
-            
-
-            
-            <!-- Botão para adicionar no banco de dados -->
-
-            <Button Text="Migrar Dados" Clicked="OnMigrarDadosClicked" />
-
-
-            <!-- Lista de gastos -->
             <CollectionView x:Name="gastosCollectionView" Margin="0,10,0,10">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BorderColor="Gray" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#1E1E1E">
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="{Binding Valor, StringFormat='R$ {0:F2}'}" FontAttributes="Bold" TextColor="White"/>
-                                <Label Text="{Binding Local}" TextColor="White"/>
-                                <Label Text="{Binding FormaPagamento}" TextColor="White"/>
-                                <Label Text="{Binding Data, StringFormat='Data: {0:dd/MM/yyyy HH:mm}'}" 
-                                       FontSize="10" TextColor="Gray"/>
-                                <HorizontalStackLayout>
-                                    <Button Text="Editar"
-                                            BackgroundColor="Orange"
-                                            TextColor="White"
-                                            CommandParameter="{Binding .}"
-                                            Clicked="OnEditarGastoClicked"/>
-                                    <Button Text="Excluir" 
-                                            BackgroundColor="Red" 
-                                            TextColor="White"
-                                            CommandParameter="{Binding .}"
-                                            Clicked="OnExcluirGastoClicked"/>
-                                </HorizontalStackLayout>
-                            </VerticalStackLayout>
+                        <Frame BorderColor="#333" BackgroundColor="#1E1E1E" CornerRadius="10" Padding="12" Margin="0,0,0,10">
+                            <Grid ColumnDefinitions="*, Auto">
+                                
+                                <!-- 🔹 Conteúdo principal -->
+                                <VerticalStackLayout Grid.Column="0" Spacing="3">
+                                    <Label Text="{Binding Valor, StringFormat='R$ {0:F2}'}"
+                                        FontAttributes="Bold"
+                                        TextColor="#FFD700"
+                                        FontSize="16"/>
+
+                                    <Label Text="{Binding Local}" TextColor="White" FontSize="14"/>
+                                    <Label Text="{Binding FormaPagamento}" TextColor="LightGray" FontSize="12"/>
+
+                                    <!-- Categoria -->
+                                    <Label Text="{Binding CategoriaNome}" TextColor="LightBlue" FontSize="12"/>
+                                    <!-- Subcategoria -->
+                                    <Label Text="{Binding SubcategoriaNome}" TextColor="LightGreen" FontSize="12"/>
+
+                                    <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                        FontSize="10"
+                                        TextColor="Gray"/>
+                                </VerticalStackLayout>
+
+                                <!-- 🔹 Botões alinhados à direita -->
+                                <VerticalStackLayout Grid.Column="1" Spacing="8" VerticalOptions="Center" HorizontalOptions="End">
+                                    
+                                    <!-- Botão Editar -->
+                                    <Frame BackgroundColor="Green" Padding="6" CornerRadius="6">
+                                        <ImageButton Source="editar.png"
+                                                    WidthRequest="28"
+                                                    HeightRequest="28"
+                                                    BackgroundColor="Transparent"
+                                                    CommandParameter="{Binding .}"
+                                                    Clicked="OnEditarGastoClicked"/>
+                                    </Frame>
+
+                                    <!-- Botão Excluir -->
+                                    <Frame BackgroundColor="Red" Padding="6" CornerRadius="6">
+                                        <ImageButton Source="excluir.png"
+                                                    WidthRequest="28"
+                                                    HeightRequest="28"
+                                                    BackgroundColor="Transparent"
+                                                    CommandParameter="{Binding .}"
+                                                    Clicked="OnExcluirGastoClicked"/>
+                                    </Frame>
+                                    
+                                </VerticalStackLayout>
+
+                            </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <!-- Total gasto no rodapé -->
+
+
+            <!-- 🔹 Total -->
             <Label x:Name="totalLabel"
                    Text="Total gasto: R$ 0,00"
-                   FontSize="20"
-                   TextColor="White"
+                   FontSize="22"
+                   TextColor="#FFD700"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   VerticalOptions="End"
-                   Margin="0,20,0,10"/>
+                   Margin="0,20,0,20"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
