@@ -8,7 +8,9 @@
 Aplicativo simples de **controle de gastos pessoais**, desenvolvido com **.NET MAUI**.  
 O objetivo principal é oferecer uma forma **rápida, offline e prática** de registrar despesas no dia a dia, com futura integração a **PostgreSQL** e **inteligência artificial** para sugerir categorias automaticamente, comparar seus gastos e fazer perguntas estratégicas como:
 > Quanto eu gastei com Mercado nesse ano?
+
 > Quanto eu gastei no crédito esse ano?
+
 > Compare meus gastos de energia desse mês com o mesmo mês do ano passado
 
 ## Funcionalidades Atuais
