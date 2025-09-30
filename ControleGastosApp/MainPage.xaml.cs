@@ -45,7 +45,7 @@ public partial class MainPage : ContentPage
                 var gasto = new Gasto
                 {
                     Valor = valor,
-                    Onde = ondeEntry.Text?.Trim() ?? "",
+                    Local = ondeEntry.Text?.Trim() ?? "",
                     FormaPagamento = formaPagamentoPicker.SelectedItem?.ToString() ?? "Não informado",
                     Data = DateTime.Now
                 };

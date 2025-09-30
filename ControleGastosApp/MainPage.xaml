@@ -62,7 +62,7 @@
                         <Frame BorderColor="Gray" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#1E1E1E">
                             <VerticalStackLayout Spacing="5">
                                 <Label Text="{Binding Valor, StringFormat='R$ {0:F2}'}" FontAttributes="Bold" TextColor="White"/>
-                                <Label Text="{Binding Onde}" TextColor="White"/>
+                                <Label Text="{Binding Local}" TextColor="White"/>
                                 <Label Text="{Binding FormaPagamento}" TextColor="White"/>
                                 <Label Text="{Binding Data, StringFormat='Data: {0:dd/MM/yyyy HH:mm}'}" 
                                        FontSize="10" TextColor="Gray"/>

@@ -10,9 +10,16 @@ namespace ControleGastosApp
 
         public decimal Valor { get; set; }
 
-        public string Onde { get; set; } = string.Empty;
+        // Onde foi gasto → no Postgres é a coluna "local"
+        public string Local { get; set; } = string.Empty;
+
+        // Forma de pagamento → no Postgres é a coluna "forma_pagamento"
         public string FormaPagamento { get; set; } = "Não informado";
 
         public DateTime Data { get; set; } = DateTime.Now;
+
+        // Campos extras para quando você quiser usar categorias no futuro
+        public int? CategoriaId { get; set; }
+        public int? SubcategoriaId { get; set; }
     }
 }
