@@ -8,7 +8,9 @@
 Aplicativo simples de **controle de gastos pessoais**, desenvolvido com **.NET MAUI**.  
 O objetivo principal é oferecer uma forma **rápida, offline e prática** de registrar despesas no dia a dia, com futura integração a **PostgreSQL** e **inteligência artificial** para sugerir categorias automaticamente, comparar seus gastos e fazer perguntas estratégicas como:
 > Quanto eu gastei com Mercado nesse ano?
+
 > Quanto eu gastei no crédito esse ano?
+
 > Compare meus gastos de energia desse mês com o mesmo mês do ano passado
 
 ## Funcionalidades Atuais
@@ -95,20 +97,21 @@ cd ControleGastosApp
 
 ## Instale o .APK no seu Celular Android (versão 1.0)
 
-Versão compatível com Android 5.0 (API 21) ou superior.
+Versão compatível com **Android 5.0 (API 21)** ou superior.
 
-[Download direto do APK](https://github.com/LeoMedeiros72/ControleGastosApp/releases/download/v1.0.0/ContoleGastosApp-v1.0.0-arm64.apk)
+👉 [📲 Baixar APK (Release v1.1.0)](https://github.com/LeoMedeiros72/ControleGastosApp/releases/tag/v1.1.0)
 
-Ou escaneie o QR Code:
+Ou escaneie o QR Code abaixo para abrir a página da Release:
 
-<img src="https://github.com/user-attachments/assets/542bfe8b-f5a2-4699-90f3-b918480a3937" width="250" alt="QR Code para download do APK" />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://github.com/LeoMedeiros72/ControleGastosApp/releases/download/v1.1.0/com.companyname.controlegastosapp-Signed.apk" width="250" alt="QR Code para download do APK" />
 
 Como instalar:
-Baixe o .apk clicando no link ou escaneando o QR Code acima.
 
-Copie para seu celular (se necessário).
+1. Baixe o .apk clicando no link ou escaneando o QR Code acima.
 
-Ative a opção “Permitir instalação de fontes desconhecidas” nas configurações do Android.
+2. Copie para seu celular (se necessário).
+
+3. Ative a opção “Permitir instalação de fontes desconhecidas” nas configurações do Android.
 
 Toque no arquivo e siga os passos para concluir a instalação.
 
