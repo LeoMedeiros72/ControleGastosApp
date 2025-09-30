@@ -43,6 +43,40 @@ O objetivo principal é oferecer uma forma **rápida, offline e prática** de re
 ## Captura de tela
 
 ![Imagem do WhatsApp de 2025-07-12 à(s) 13 19 12_77cbea2b](https://github.com/user-attachments/assets/0b63fe90-bf97-49c0-ab3d-4791f27c9a69)
+<img width="538" height="428" alt="image" src="https://github.com/user-attachments/assets/495f1367-533d-4dad-aaa3-e843a540c9b3" />
+<img width="527" height="566" alt="image" src="https://github.com/user-attachments/assets/f7aee6c5-33ab-41c2-a91c-592b90d65018" />
+
+## Histórico de versões
+
+### v1.0.0 
+
+Cadastro de gastos com:
+
+- Valor
+
+- Local onde foi gasto
+
+- Forma de pagamento (Dinheiro, Crédito, Débito, Pix)
+
+- Exibição da lista de gastos cadastrados.
+
+- Cálculo automático do total gasto.
+
+- Exclusão de gastos individualmente.
+
+- Interface inicial com tema escuro.
+
+- Distribuição do primeiro .apk para Android.
+
+### v1.1.1 — (2025-06-01)
+
+- Integração com PostgreSQL para sincronização dos dados cadastrados offline no SQLite.
+
+- Implementada verificação de duplicidade antes de enviar os gastos para o Postgres.
+
+- Adicionadas categorias e subcategorias automáticas e personalizadas (com fallback para “Outros”).
+
+- Melhorias na interface de listagem de gastos (mostrando local e forma de pagamento).
 
 
 ## 🚀 Como executar
@@ -59,7 +93,7 @@ cd ControleGastosApp
 4. Execute o projeto (Ctrl + F5 ou botão “Executar”).
 
 
-## Instale o .APK no seu Celular Android
+## Instale o .APK no seu Celular Android (versão 1.0)
 
 Versão compatível com Android 5.0 (API 21) ou superior.
 
