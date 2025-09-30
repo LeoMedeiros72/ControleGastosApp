@@ -87,10 +87,10 @@ namespace ControleGastosApp.Services
             if (local.Contains("mercado"))
                 return (1, 1); // Alimentação > Compra Mensal
 
-            if (local.Contains("restaurante") || local.Contains("lanche"))
+            if (local.Contains("restaurante") || local.Contains("lanche") || local.Contains("McDonald's") || local.Contains("Burger King"))
                 return (1, 3); // Alimentação > Restaurantes
 
-            if (local.Contains("salão") || local.Contains("beleza"))
+            if (local.Contains("salão") || local.Contains("beleza") || local.Contains("cabeleireiro") || local.Contains("corte de cabelo"))
                 return (13, 1); // Beleza > Salão de Beleza
 
             if (local.Contains("uber") || local.Contains("taxi"))
@@ -99,7 +99,7 @@ namespace ControleGastosApp.Services
             if (local.Contains("combustivel") || local.Contains("posto"))
                 return (8, 1); // Veículos > Combustível
 
-            if (local.Contains("escola") || local.Contains("faculdade") || local.Contains("curso"))
+            if (local.Contains("escola") || local.Contains("faculdade") || local.Contains("curso") || local.Contains("creche") || local.Contains("inglês"))
                 return (10, 1); // Educação > Mensalidade Escolar
 
             return (15, 1); // Outros > Outros
