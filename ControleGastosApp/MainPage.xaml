@@ -52,7 +52,7 @@
             
             <!-- Botão para adicionar no banco de dados -->
 
-            <Button Text="Testar Postgres" Clicked="OnTestarPostgresClicked" />
+            <Button Text="Migrar Dados" Clicked="OnMigrarDadosClicked" />
 
 
             <!-- Lista de gastos -->

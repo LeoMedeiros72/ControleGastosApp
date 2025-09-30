@@ -68,8 +68,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Testar Postgres (inserção e leitura)
-    private async void OnTestarPostgresClicked(object sender, EventArgs e)
+    // Migrar Dados (inserção e leitura)
+    private async void OnMigrarDadosClicked(object sender, EventArgs e)
     {
         try
         {

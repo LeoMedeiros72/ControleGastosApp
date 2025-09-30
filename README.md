@@ -1,31 +1,44 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/LeoMedeiros72/ControleGastosApp)
+![GitHub last commit](https://img.shields.io/github/last-commit/LeoMedeiros72/ControleGastosApp)
+![GitHub repo size](https://img.shields.io/github/repo-size/LeoMedeiros72/ControleGastosApp)
+![GitHub issues](https://img.shields.io/github/issues/LeoMedeiros72/ControleGastosApp)
 
 # ControleGastosApp
 
-Aplicativo simples de controle de gastos pessoais, desenvolvido com .NET MAUI, com o objetivo de futuramente implementar inteligência artificial para auxiliar na gestão de despesas. A proposta é comparar gastos com meses anteriores, categorias ou períodos semelhantes.
+Aplicativo simples de **controle de gastos pessoais**, desenvolvido com **.NET MAUI**.  
+O objetivo principal é oferecer uma forma **rápida, offline e prática** de registrar despesas no dia a dia, com futura integração a **PostgreSQL** e **inteligência artificial** para sugerir categorias automaticamente, comparar seus gastos e fazer perguntas estratégicas como:
+> Quanto eu gastei com Mercado nesse ano?
+> Quanto eu gastei no crédito esse ano?
+> Compare meus gastos de energia desse mês com o mesmo mês do ano passado
 
-## Funcionalidades
+## Funcionalidades Atuais
 
-- Inserção de novos gastos com:
+- ✅ Inserção de novos gastos com:
   - Valor
   - Local onde foi gasto
   - Forma de pagamento (Dinheiro, Crédito, Débito, Pix)
-- Exibição da lista de gastos cadastrados
-- Cálculo automático do total gasto
-- Opção para remover gastos individualmente
+- ✅ Exibição da lista de gastos cadastrados
+- ✅ Cálculo automático do **total gasto**
+- ✅ Remoção e edição de gastos
+- ✅ Tema escuro para maior conforto visual
+- ✅ Sincronização opcional com banco **PostgreSQL** (via botão)
+- ✅ Prevenção contra duplicidade de gastos no banco
+
 
 ## Interface
 
-- Tema escuro com fundo preto
-- Título em amarelo
-- Botão "Adicionar Gasto" em verde escuro
-- Entradas e texto em branco
+- Tema escuro com fundo preto  
+- Título em **amarelo**  
+- Botão **Adicionar Gasto** em verde escuro  
+- Entradas e texto em **branco**  
 
-## Tecnologias utilizadas
+## Tecnologias Utilizadas
 
-- [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/)
-- C#
-- XAML
+- [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/) — framework multiplataforma
+- [C#](https://learn.microsoft.com/pt-br/dotnet/csharp/)
+- [XAML](https://learn.microsoft.com/en-us/dotnet/maui/xaml/)
+- [SQLite](https://www.sqlite.org/index.html) — armazenamento local
+- [PostgreSQL](https://www.postgresql.org/) — sincronização de dados via container Docker
 
 ## Captura de tela
 
@@ -67,5 +80,37 @@ Toque no arquivo e siga os passos para concluir a instalação.
 
 ⚠️ Esta versão não está disponível na Google Play Store.
 
+## Futuras Melhorias
+
+1. Inteligência Artificial para sugerir categorias/subcategorias automaticamente
+
+2. Gráficos e relatórios de gastos por período
+
+3. Sincronização em nuvem para multiplataforma
+
+4. Categorias e Subcategorias dinâmicas (ex.: Supermercado → Compra mensal / Compra extra)
+
+5. Alertas inteligentes quando os gastos ultrapassarem o planejado
+
+6. Pergunte a IA: Faça perguntas pertinentes e a IA vai responder de acordo com seus gastos
+
+## Contribuição
+
+### Contribuições são bem-vindas!
+
+1. Faça um fork do projeto
+
+2. Crie sua branch (git checkout -b feature/minha-feature)
+
+3. Commit suas alterações (git commit -m 'Minha nova feature')
+
+4. Faça push (git push origin feature/minha-feature)
+
+5. Abra um Pull Request 
+
+## Licença
+
+Este projeto está sob a licença MIT.
+Consulte o arquivo LICENSE
 
 
