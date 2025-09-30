@@ -47,6 +47,13 @@
                     BackgroundColor="DarkGreen"
                     TextColor="White"
                     CornerRadius="10" />
+            
+
+            
+            <!-- Botão para adicionar no banco de dados -->
+
+            <Button Text="Testar Postgres" Clicked="OnTestarPostgresClicked" />
+
 
             <!-- Lista de gastos -->
             <CollectionView x:Name="gastosCollectionView" Margin="0,10,0,10">
@@ -59,11 +66,18 @@
                                 <Label Text="{Binding FormaPagamento}" TextColor="White"/>
                                 <Label Text="{Binding Data, StringFormat='Data: {0:dd/MM/yyyy HH:mm}'}" 
                                        FontSize="10" TextColor="Gray"/>
-                                <Button Text="Excluir" 
-                                        BackgroundColor="Red" 
-                                        TextColor="White"
-                                        Clicked="OnExcluirGastoClicked"
-                                        CommandParameter="{Binding .}" />
+                                <HorizontalStackLayout>
+                                    <Button Text="Editar"
+                                            BackgroundColor="Orange"
+                                            TextColor="White"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnEditarGastoClicked"/>
+                                    <Button Text="Excluir" 
+                                            BackgroundColor="Red" 
+                                            TextColor="White"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnExcluirGastoClicked"/>
+                                </HorizontalStackLayout>
                             </VerticalStackLayout>
                         </Frame>
                     </DataTemplate>
